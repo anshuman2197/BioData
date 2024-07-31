@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+        {{message}}
+        <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button> -->
+
+    </div>
+    {% endfor %}
+    <div class="text-center mt-5">
+        <img src={% static 'core/images/Anshuman.jpg' %} alt="ProfilePic" class="img-thumbnail" width="250px" height="150px">
+    </div>
+    <div class="text-white mt-5 mx-5 text-justify">
+        <h1 class="font-weight-bold st-font">Hello ,</h1>
+        <div class="px-4" style="line-height:2rem;">
+            <p style="text-indent:100px;">
+                I am <b class="text-warning">Anshuman Thakur</b>, a skilled Python developer with a passion for coding and problem-solving.
+                I have a strong background in Python, Django, REST framework, React.js and AWS, and I excel at developing efficient, scalable, and 
+                robust applications. I am adept at leveraging various Python frameworks and libraries to deliver innovative solutions. 
+                My commitment to continuous learning ensures that I stay updated with the latest industry trends and best practices, 
+                making me a valuable asset to any development team.
+            </p>
+            
+        </div>
+        
+    </div>
+    <div class="text-center">
+        <a href="{% url 'contact' %}" class="btn btn-outline-warning my-3 mr-5">Hire Me</a>
+        <a href="{% url 'contact' %}" class="btn btn-outline-info my-3 mr-5">Contact</a>
+    </div>
+    </div>
+    
+{% endblock content %}
